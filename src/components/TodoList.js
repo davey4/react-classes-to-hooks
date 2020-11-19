@@ -45,14 +45,14 @@ const Todolist = () => {
   };
 
   const handleChange = (e) => {
-    let newTask = e.target.value;
-    manageTask(newTask);
+    manageTask(e.target.value);
   };
 
   const removeTask = (i) => {
-    tasks.splice(i, 1);
-    console.log(tasks);
-    manageTasks([...tasks]);
+    const tasksArr = [...tasks];
+    tasksArr.splice(i, 1);
+    // console.log(tasksArr);
+    manageTasks(tasksArr);
   };
 
   return (
