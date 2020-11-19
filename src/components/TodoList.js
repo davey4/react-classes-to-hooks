@@ -36,10 +36,12 @@ const Todolist = () => {
   const [task, manageTask] = useState("");
 
   const addTask = () => {
-    let myNewList = [...tasks, task];
-    manageTasks(myNewList);
-    manageTask("");
-    console.log(tasks);
+    if (task) {
+      let myNewList = [...tasks, task];
+      manageTasks(myNewList);
+      manageTask("");
+      console.log(tasks);
+    }
   };
 
   const handleChange = (e) => {
